@@ -1,0 +1,170 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #d9d9d9);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus, select:focus {
+    border-color: #5e60ce;
+    outline: none;
+    box-shadow: 0 0 8px rgba(94, 96, 206, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #5e60ce;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0b966c;
+}
+/* Users Table - Modern blue */
+.table-users {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #e6f0ff;
+    color: #003366;
+    box-shadow: 0 0 8px rgba(0, 51, 102, 0.3);
+}
+.table-users th, .table-users td {
+    border: 1px solid #99bbff;
+    padding: 12px 15px;
+    text-align: left;
+}
+.table-users th {
+    background-color: #0059b3;
+    color: white;
+}
+
+/* Locations Table - Clean gray */
+.table-locations {
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    width: 100%;
+    background-color: #f7f7f7;
+}
+.table-locations th, .table-locations td {
+    padding: 14px 20px;
+    border-bottom: 2px solid #ddd;
+    text-align: left;
+    color: #444;
+}
+.table-locations th {
+    background-color: #bfbfbf;
+    color: #222;
+}
+
+/* Locations Table - Light blue */
+.table-bins {
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    width: 100%;
+    background-color: #f0f8ff;
+}
+
+.table-bins th, .table-bins td {
+    padding: 14px 20px;
+    border-bottom: 2px solid #a9cce3;
+    text-align: left;
+    color: #003366;
+}
+
+.table-bins th {
+    background-color: #6699cc;
+    color: white;
+}
+
+/* Collections Table - Elegant green */
+.table-collections {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2f4f2f;
+}
+.table-collections th, .table-collections td {
+    border: 1px solid #4CAF50;
+    padding: 10px 12px;
+    text-align: center;
+}
+.table-collections th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Complaints Table - Bold red */
+.table-complaints {
+    width: 100%;
+    border-collapse: collapse;
+    color: #8b0000;
+    font-weight: 600;
+}
+.table-complaints th, .table-complaints td {
+    border: 2px solid #8b0000;
+    padding: 12px 16px;
+    text-align: left;
+}
+.table-complaints th {
+    background-color: #ff4d4d;
+    color: white;
+}
+/* Collectors Table - Stylish purple */
+.table-collectors {
+    width: 100%;
+    border-collapse: collapse;
+    color: #4b0082;
+}
+.table-collectors th, .table-collectors td {
+    border: 1px solid #9370db;
+    padding: 10px 15px;
+    text-align: center;
+}
+.table-collectors th {
+    background-color: #9370db;
+    color: white;
+}

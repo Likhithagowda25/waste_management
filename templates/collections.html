@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waste Collection List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <table class="table-collectors">
+        <thead>
+            <tr>
+                <th>Collection ID</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Collector Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for col in collections %}
+            <tr>
+                <td>{{ col[0] }}</td>
+                <td>{{ col[1] }}</td>
+                <td>{{ col[2] }}</td>
+                <td>{{ col[3] }}</td>
+                <td>{{ col[4] }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('delete_collection', collection_id=col[0]) }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register Waste Collection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('register_collection') }}">
+        <label for="location_id">Location</label>
+        <select name="location_id" id="location_id" required>
+            <option value="">Select a location</option>
+            {% for loc in locations %}
+            <option value="{{ loc[0] }}">{{ loc[1] }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="collection_date">Date</label>
+        <input type="date" id="collection_date" name="collection_date" required>
+
+        <label for="collection_time">Time</label>
+        <input type="time" id="collection_time" name="collection_time" required>
+
+        <label for="collector_id">Collector</label>
+        <select name="collector_id" id="collector_id" required>
+            <option value="">Select a collector</option>
+            {% for col in collectors %}
+            <option value="{{ col[0] }}">{{ col[1] }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+</body>
+</html>

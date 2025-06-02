@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Management Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://media.istockphoto.com/id/1200963979/vector/vector-illustration-of-recycling-concept-flat-modern-design-for-web-page-banner-presentation.jpg?s=612x612&w=0&k=20&c=9X3N35JAOIJf3KgY9-rJHVYAMQLdBOLX0_ZSl5tnAI0=') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #2e7d32;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            background-color: #43a047;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Waste Management Registration</h1>
+        <a class="btn" href="/register_user">User Registration</a>
+        <a class="btn" href="/register_location">Add Location</a>
+        <a class="btn" href="/register_bin">Add Waste Bin</a>
+        <a class="btn" href="/register_collector">Assign Collector</a>
+        <a class="btn" href="/register_complaint">Report a Complaint</a>
+        <a class="btn" href="/register_collection">Waste Collection</a>
+    </div>
+    <!-- <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>User ID</th>
+      <th>Issue</th>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in complaints %}
+    <tr>
+      <td data-label="ID">{{ c.complaint_id }}</td>
+      <td data-label="User ID">{{ c.user_id }}</td>
+      <td data-label="Issue">{{ c.issue }}</td>
+      <td data-label="Date">{{ c.date_raised }}</td>
+      <td data-label="Status">{{ c.status }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table> -->
+
+</body>
+</html>
+

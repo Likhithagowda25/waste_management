@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collectors List</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <table class="table-collectors">
+    <thead>
+      <tr>
+        <th>Collector ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for collector in collectors %}
+      <tr>
+        <td>{{ collector[0] }}</td>
+        <td>{{ collector[1] }}</td>
+        <td>{{ collector[2] }}</td>
+        <td>
+          <form method="POST" action="/delete_collector/{{ collector[0] }}">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

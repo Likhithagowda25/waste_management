@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bins List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <table class="table-bins">
+        <thead>
+            <tr>
+                <th>Bin ID</th>
+                <th>Bin Type</th>
+                <th>Capacity (kg)</th>
+                <th>Current Level (kg)</th>
+                <th>Status</th>
+                <th>Location Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bin in bins %}
+            <tr>
+                <td>{{ bin[0] }}</td>
+                <td>{{ bin[1] }}</td>
+                <td>{{ bin[2] }}</td>
+                <td>{{ bin[3] }}</td>
+                <td>{{ bin[4] }}</td>
+                <td>{{ bin[5] }}</td>
+                <td>
+                    <form method="POST" action="/delete_bin/{{ bin[0] }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

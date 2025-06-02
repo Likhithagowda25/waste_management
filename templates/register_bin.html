@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Bin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Register Bin</h2>
+    <form method="POST">
+        <label for="bin_type">Bin Type:</label>
+        <input type="text" name="bin_type" id="bin_type" placeholder="e.g., Organic, Plastic" title="Enter bin type" required>
+
+        <label for="capacity_kg">Capacity (kg):</label>
+        <input type="number" name="capacity_kg" id="capacity_kg" title="Enter total capacity in kilograms" required>
+
+        <label for="current_level_kg">Current Level (kg):</label>
+        <input type="number" name="current_level_kg" id="current_level_kg" title="Enter current fill level in kilograms" required>
+
+        <label for="status">Status:</label>
+        <select name="status" id="status" title="Select current status of the bin" required>
+            <option value="" disabled selected>Select status</option>
+            <option value="empty">Empty</option>
+            <option value="partial">Partial</option>
+            <option value="full">Full</option>
+        </select>
+
+        <label for="location_id">Location:</label>
+        <select name="location_id" id="location_id" title="Select location" required>
+            <option value="" disabled selected>Select location</option>
+            {% for loc in locations %}
+            <option value="{{ loc[0] }}">{{ loc[1] }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" title="Click to register bin">Register</button>
+    </form>
+</div>
+</body>
+</html>

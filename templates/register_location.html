@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register Location</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Register Location</h2>
+    <form method="POST" action="/register_location">
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required />
+
+        <label for="area">Area</label>
+        <input type="text" id="area" name="area" required />
+
+        <label for="street">Street</label>
+        <input type="text" id="street" name="street" required />
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" required />
+
+        <label for="pincode">Pincode</label>
+        <input type="text" id="pincode" name="pincode" required />
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+</body>
+</html>

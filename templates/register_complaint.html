@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register Complaint</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Register Complaint</h2>
+    <form method="POST" action="{{ url_for('register_complaint') }}">
+        
+        <label for="user_id">User ID</label>
+        <select name="user_id" id="user_id" required>
+            <option value="" disabled selected>Select a user</option>
+            {% for user in users %}
+                <option value="{{ user[0] }}">ID: {{ user[0] }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="location_id">Location ID</label>
+        <select name="location_id" id="location_id" required>
+            <option value="" disabled selected>Select a location</option>
+            {% for location in locations %}
+                <option value="{{ location[0] }}">ID: {{ location[0] }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="issue">Issue</label>
+        <input type="text" name="issue" id="issue" placeholder="Describe the issue" required />
+
+        <label for="date_raised">Date Raised</label>
+        <input type="date" name="date_raised" id="date_raised" required />
+
+        <label for="status">Status</label>
+        <select name="status" id="status" required>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Resolved">Resolved</option>
+        </select>
+
+        <button type="submit">Submit Complaint</button>
+    </form>
+</div>
+</body>
+</html>
