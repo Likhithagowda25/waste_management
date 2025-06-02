@@ -38,6 +38,15 @@ def show_users():
     cur.close()
     return render_template('users.html', users=users)
 
+@app.route('/view_users')
+def view_users():
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM users")
+    users = cursor.fetchall()
+    cursor.close()
+    return render_template("users.html", users=users)
+
+
 # LOCATIONS
 @app.route('/register_location', methods=['GET', 'POST'])
 def register_location():
@@ -69,6 +78,14 @@ def delete_location(location_id):
     mysql.connection.commit()
     cur.close()
     return redirect(url_for('show_locations'))
+
+@app.route('/view_locations')
+def view_locations():
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM locations")
+    locations = cursor.fetchall()
+    cursor.close()
+    return render_template("locations.html", locations=locations)
 
 # BINS
 @app.route('/register_bin', methods=['GET', 'POST'])
@@ -104,6 +121,14 @@ def delete_bin(bin_id):
     cur.close()
     return redirect(url_for('show_bins'))
 
+@app.route('/view_bins')
+def view_bins():
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM bins")
+    bins = cursor.fetchall()
+    cursor.close()
+    return render_template("bins.html", bins=bins)
+
 # COLLECTORS
 @app.route('/register_collector', methods=['GET', 'POST'])
 def register_collector():
@@ -134,6 +159,14 @@ def delete_collector(collector_id):
     mysql.connection.commit()
     cur.close()
     return redirect(url_for('show_collectors'))
+
+@app.route('/view_collectors')
+def view_collectors():
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM collectors")
+    collectors = cursor.fetchall()
+    cursor.close()
+    return render_template("collectors.html", collectors=collectors)
 
 # COMPLAINTS
 @app.route('/register_complaint', methods=['GET', 'POST'])
@@ -179,6 +212,14 @@ def delete_complaint(complaint_id):
     cur.close()
     return redirect(url_for('show_complaints'))
 
+@app.route('/view_complaints')
+def view_complaints():
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM complaints")
+    complaints = cursor.fetchall()
+    cursor.close()
+    return render_template("complaints.html", complaints=complaints)
+
 # WASTE COLLECTION
 @app.route('/register_collection', methods=['GET', 'POST'])
 def register_collection():
@@ -214,6 +255,14 @@ def delete_collection(collection_id):
     mysql.connection.commit()
     cursor.close()
     return redirect(url_for('show_waste_collections'))
+
+@app.route('/view_collections')
+def view_collections():
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM waste_collection")
+    collections = cursor.fetchall()
+    cursor.close()
+    return render_template("collections.html", collections=collections)
 
 if __name__ == '__main__':
     app.run(debug=True)

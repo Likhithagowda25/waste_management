@@ -60,29 +60,15 @@
         <a class="btn" href="/register_complaint">Report a Complaint</a>
         <a class="btn" href="/register_collection">Waste Collection</a>
     </div>
-    <!-- <table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>User ID</th>
-      <th>Issue</th>
-      <th>Date</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for c in complaints %}
-    <tr>
-      <td data-label="ID">{{ c.complaint_id }}</td>
-      <td data-label="User ID">{{ c.user_id }}</td>
-      <td data-label="Issue">{{ c.issue }}</td>
-      <td data-label="Date">{{ c.date_raised }}</td>
-      <td data-label="Status">{{ c.status }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table> -->
-
+    <div class="container">
+    <h2>View Records</h2>
+      <a class="btn" href="/view_users">View Users</a>
+      <a class="btn" href="/view_locations">View Locations</a>
+      <a class="btn" href="/view_bins">View Bins</a>
+      <a class="btn" href="/view_collectors">View Collectors</a>
+      <a class="btn" href="/view_complaints">View Complaints</a>
+      <a class="btn" href="/view_collections">View Waste Collections</a>
+  </div>
 </body>
 </html>
 
