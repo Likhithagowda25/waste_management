@@ -9,16 +9,6 @@
 <body>
 <div class="container">
     <h2>Register Collection</h2>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul class="flashes">
-          {% for message in messages %}
-            <li>{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-
     <form method="POST" action="{{ url_for('register_collection') }}">
         <label for="location_id">Location</label>
         <select name="location_id" id="location_id" required>

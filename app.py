@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for,flash
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -41,11 +41,10 @@ def show_users():
 @app.route('/view_users')
 def view_users():
     cursor = mysql.connection.cursor()
-    cursor.execute("SELECT * FROM users")
+    cursor.execute("SELECT user_id, name, email, phone,role FROM users")  # Exclude password
     users = cursor.fetchall()
     cursor.close()
-    return render_template("users.html", users=users)
-
+    return render_template('users.html', users=users)
 
 # LOCATIONS
 @app.route('/register_location', methods=['GET', 'POST'])
@@ -263,6 +262,17 @@ def view_collections():
     collections = cursor.fetchall()
     cursor.close()
     return render_template("collections.html", collections=collections)
+
+@app.route('/update_status/<int:complaint_id>', methods=['POST'])
+def update_status(complaint_id):
+    new_status = request.form['status']
+    cursor = mysql.connection.cursor()
+    cursor.execute("UPDATE complaints SET status = %s WHERE complaint_id = %s", (new_status, complaint_id))
+    mysql.connection.commit()
+    cursor.close()
+    flash('Complaint status updated successfully!')
+    return redirect(url_for('view_complaints'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Complaint Status</title>
+</head>
+<body>
+    <h2>Edit Status for Complaint #{{ complaint.complaint_id }}</h2>
+    <form method="POST">
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+            <option value="Pending" {% if complaint['status'] == 'Pending' %}selected{% endif %}>Pending</option>
+            <option value="Resolved" {% if complaint['status'] == 'Resolved' %}selected{% endif %}>Resolved</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Update Status">
+    </form>
+</body>
+</html>
